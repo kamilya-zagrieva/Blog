@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+first_user = User.create(first_name: "John", last_name:"Travolta", login:"JT")
+first_post = first_user.posts.create(title:"IT",body:"Lorem Ipsum")
+second_post = first_user.posts.create(title:"Asus",body:"Lorem Ipsum asus")
+third_post = first_user.posts.create(title:"Dell",body:"Lorem Ipsum Dell")
+
+first_user.posts.each do |post|
+	1.times do |i|
+		post.comments.create(title:"Title  #{i}",message:"message  #{i}")
+	end
+end
+

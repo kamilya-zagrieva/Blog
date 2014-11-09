@@ -1,4 +1,4 @@
 class User <ActiveRecord::Base
-	has_many:Post
+	has_many :posts
 	validates :login, uniqueness: true
 end

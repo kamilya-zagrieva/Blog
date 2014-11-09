@@ -1,1 +1,11 @@
-<h1> The number of posts is <%= @posts.count %> </h1>>
+<h1> Posts List</h1>
+<ul>
+	<% @posts.each do |post| %>
+		<li>
+			<p> <%= link_to post.title,post_path(post) %> created by <%= post.user.login %> </p>
+			<p> It has <%= pluralize( post.comments.count, "comment") %>  </p>
+
+		</li>
+
+		<% end %>
+</ul>

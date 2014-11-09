@@ -1,8 +1,9 @@
-class CreateUsers < ActiveRecord::Migration
+			class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
-      t.string :first_name
-      t.string :last_name
+    	t.string :login, null: false
+    	t.string :last_name
+   		t.string :first_name
     end
   end
 end

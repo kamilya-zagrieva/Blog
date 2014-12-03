@@ -1,9 +1,10 @@
+
 <ul>
 	<%= commentable.comments.each do |comment| %>
 		<li>
 			<%= comment.title  %> </br>
 			<%= comment.message  %> 
-		
+				<%= link_to 'Destroy Comment', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
 		</li>
 	<% end %>
 </ul>

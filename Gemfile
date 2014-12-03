@@ -35,6 +35,9 @@ gem 'spring'
 gem 'devise'
 gem 'bootstrap-sass', '2.3.2.0'
 
+gem 'rails_12factor', '0.0.2'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

@@ -8,10 +8,10 @@
 	<% @posts.each do |post| %>
 		<li>
 		
-			<p> <%= link_to post.title,post_path(post) %> created by <%= post.user.try (:login) %> 
-			 <%= link_to "Edit post",edit_post_path(post) %>
+			<p> <%= link_to post.title,post_path(post) %> created by <%= post.user.try (:full_name) %> 
+			 <!--<%= link_to "Edit post",edit_post_path(post) %>-
 			 <%= link_to "Delete post",post_path(post),method: :delete, confirm: 'Are you sure?' %>
-			 </p>
+			 </p>-->
 			<p> It has <%= pluralize( post.comments.count, "comment") %>  </p>
 
 		</li>

@@ -18,9 +18,9 @@ class PostsController <ApplicationController
 
 	def create
 
-		@post = Post.new (post_params)
+		@post = current_user.posts.build(post_params)
 
-		#@post.save
+		@post.save
 
 		#flash[:notice] = "Post was successfully created"
 		if post.save
@@ -41,13 +41,12 @@ class PostsController <ApplicationController
 		#@post.save
 
 		#flash[:notice] = "Post update successfully created"
-		if @post.valid?
-			@post.save
-			flash[:notice]="Post   update successfully created"
+		if @post.save
+			flash[:notice]="Post   update successfully "
 		else  
 			flash[:warning]="Failed"
 		end
-		redirect_to posts_path
+		redirect_to @post
 	end
 	def  post
 		@post ||= Post.find(params[:id])
